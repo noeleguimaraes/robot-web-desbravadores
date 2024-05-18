@@ -1,0 +1,63 @@
+name: Robot Framework Tests
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.12'
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Run Robot Framework tests
+      run: |
+        robot -d logs tests
+
+    - name: Archive Robot Framework results
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: robot-results
+        path: logs/
+  
+  deploy:
+      name: Deploy GitHub Pages 🌐
+      runs-on: ubuntu-latest
+      needs: 
+        - test
+      permissions:
+        contents: read
+        pages: write
+        id-token: write
+      environment:
+        name: github-pages
+        url: https://victtorhenrique.github.io/robot-web-desbravadores/report.html
+      steps:
+        - name: Setup Pages
+          uses: actions/configure-pages@v5
+  
+        - name: Download Artifacts
+          uses: actions/download-artifact@v4
+          with: 
+            name: robot-framework-report-web
+  
+        - name: Upload artifact
+          uses: actions/upload-pages-artifact@v3
+          with:
+            path: ./
+  
+        - name: Deploy to Github Pages
+          id: deployment
+          uses: actions/deploy-pages@v4

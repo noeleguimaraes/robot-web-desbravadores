@@ -1,0 +1,19 @@
+AMBIENTE:
+  WEB:
+    URL: https://automacao.qacoders-academy.com.br/login
+    BROWSER: chrome
+    TIMEOUT: 15
+  API:
+    URL: https://develop.qacoders-academy.com.br  
+    ENDPOINTS:
+      AUTH:
+        GET_VALIDATE: /api/validateToken
+        POST_LOGIN: /api/login/
+      USERS:
+        GET_USER: /api/user/
+        GET_USER_COUNT: /api/user/count
+        POST_USER: /api/user/
+        PUT_USER: /api/user/
+        DELETE_USER: /api/user/
+        PUT_PASSWORD: /api/user/password/
+        PUT_STATUS: /api/user/status/
