@@ -29,7 +29,7 @@ Gerador de Diretorias
     Set Test Variable    ${NOME_DIRETORIA}
 
 Acessar site
-    Open Browser  ${AMBIENTE.WEB.URL}  ${AMBIENTE.WEB.BROWSER}
+    Open Browser  ${AMBIENTE.WEB.URL}  ${AMBIENTE.WEB.BROWSER_HEADLESS}
     Set Window Size    1920    1080
     Maximize Browser Window
 
