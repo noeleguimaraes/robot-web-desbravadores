@@ -2,6 +2,7 @@ AMBIENTE:
   WEB:
     URL: https://automacao.qacoders-academy.com.br/login
     BROWSER: chrome
+    BROWSER_HEADLESS: headlesschrome
     TIMEOUT: 15
   API:
     URL: https://develop.qacoders-academy.com.br  
