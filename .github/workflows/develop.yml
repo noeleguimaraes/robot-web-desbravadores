@@ -35,6 +35,7 @@ jobs:
   deploy:
       name: Deploy GitHub Pages 🌐
       runs-on: ubuntu-latest
+      if: always()
       needs: 
         - test
       permissions:
@@ -44,6 +45,7 @@ jobs:
       environment:
         name: github-pages
         url: https://victtorhenrique.github.io/robot-web-desbravadores/report.html
+
       steps:
         - name: Setup Pages
           uses: actions/configure-pages@v5
