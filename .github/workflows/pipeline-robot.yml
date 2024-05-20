@@ -23,7 +23,7 @@ jobs:
 
     - name: Run Robot Framework tests
       run: |
-        robot -d logs tests
+        robot -d .\logs -v HEADLESS:False tests
 
     - name: Archive Robot Framework results
       if: always()

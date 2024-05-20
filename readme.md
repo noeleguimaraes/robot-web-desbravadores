@@ -57,7 +57,9 @@ robot nome_do_arquivo.robot
 │   └──── utils_keywords.robot
 |── main.robot 
 ├── tests
+|    ├── diretoria.robot
 |    ├── login.robot
+|    └── usuarios.robot
 ├── readme.md
 └── requirements.txt
 ```

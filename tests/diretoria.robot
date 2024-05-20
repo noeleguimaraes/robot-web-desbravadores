@@ -8,7 +8,7 @@ CT08 - Cadastro Diretoria com Sucesso
     [Setup]    Gerador de Diretorias
     Dado que usuario acesse o menu Diretorias
     Quando clicar no botao novo Cadastro
-    E preencher o campo Nome da Diretoria   Diretoria pvpwqtqgch      
+    E preencher o campo Nome da Diretoria   ${NOME_DIRETORIA}     
     Então o sistema devera cadastrar uma nova diretoria com sucesso
     Screenshot    Diretoria Cadastrada com sucesso
 

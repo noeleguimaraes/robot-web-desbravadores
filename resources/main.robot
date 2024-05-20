@@ -30,3 +30,7 @@ Resource    ./keywords/usuarios_kws.resource
 
 #API
 Resource    ./api/keywords/api_post_user.resource
+
+#### Variaveis ####
+*** Variables ***
+${HEADLESS}    ${True}
