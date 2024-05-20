@@ -26,6 +26,7 @@ E clicar em entrar
     Clicar    ${entrarButton}
 
 Então o sistema exibe a tela "${caminho}" e menu lateral com a opção "${cadastro}"
+    Sleep    2
     Validar tela contem elemento    ${BUTTON_CADASTRO}
     Validar caminho URL   ${caminho}
 
